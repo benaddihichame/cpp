@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:03:46 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/10/02 15:42:27 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/10/02 20:07:47 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,17 @@ Contact::~Contact()
 {
     return ;
 }
-
-void    Contact::init(void)
+std::string Contact::getname(void) const
 {
-    
+    return this->name;
+}
+
+std::string Contact::getlastName(void) const
+{
+    return this->lastName;
+}
+
+std::string Contact::getnickname() const
+{
+    return this->nickname;
 }

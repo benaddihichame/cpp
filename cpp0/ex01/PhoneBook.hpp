@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:01:02 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/10/02 15:30:36 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/10/02 18:52:47 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,13 @@ class PhoneBook
 private:
         Contact contact[8];
         int index;
-        int max;
+        int max = 8;
 public:
-        PhoneBook()
-        {
-            index = 0;
-            max = 8;
-        }
+        PhoneBook();
         ~PhoneBook();
         void    addContact();
         void    deleteContact();
         void    searchContact();
-
 };
 
 #endif
