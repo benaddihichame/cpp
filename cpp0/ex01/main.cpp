@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:03:21 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/10/02 15:24:25 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/10/04 23:22:49 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void    showHome()
     std::cout << "> \033[38;5;226mEXIT\033[0m📵  : Exit the PhoneBook" << std::endl;
     std::cout << "**********************************************" << std::endl;
 }
-
 int main()
 {
     std::string commande;
@@ -41,7 +40,7 @@ int main()
         else if (commande == "ADD")
             Phone.addContact();
         else if (commande == "SEARCH")
-            Phone.searchContact();
+           Phone.searchContact();
         else if (commande == "EXIT")
             break;
         else if (commande.empty())

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:01:02 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/10/02 18:52:47 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/10/05 14:41:15 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ class PhoneBook
 private:
         Contact contact[8];
         int index;
-        int max = 8;
 public:
         PhoneBook();
         ~PhoneBook();
         void    addContact();
         void    deleteContact();
         void    searchContact();
+        void    displayContact(Contact c);
 };
 
 #endif
