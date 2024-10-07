@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:03:21 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/10/04 23:22:49 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/10/07 18:44:10 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main()
     showHome();
     while(1)
     {
-        std::cout << "Please Only Enter ADD, Search or Exit \n";
+        std::cout << "->";
         std::getline(std::cin, commande);
         if (std::cin.eof())
             break;
@@ -45,9 +45,11 @@ int main()
             break;
         else if (commande.empty())
         {
-            std::cout<< "Comon men You just add to press the good boutton\n";
+            std::cout<< "Comon men You just had to press the good boutton\n";
             continue;
         }
+        else
+            std::cout<< "ONLY ENTER ADD EXIT OR SEARCH\n";
     }
     return (0);
 }

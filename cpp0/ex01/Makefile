@@ -6,7 +6,7 @@
 #    By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/02 12:32:43 by hbenaddi          #+#    #+#              #
-#    Updated: 2024/10/02 15:15:09 by hbenaddi         ###   ########.fr        #
+#    Updated: 2024/10/07 17:15:59 by hbenaddi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,18 @@ CPPFLAGS = -Werror -Wextra -Wall -std=c++98
 NAME = phonebook
 RM = rm -rf
 
+SRC = main.cpp PhoneBook.cpp Contact.cpp
+OBJ = $(SRC:.cpp=.o)
+
 all: $(NAME)
 
-$(NAME): $(NAME).cpp
-	$(CPPCOMPILER) $(CPPFLAGS) -o $(NAME) $(NAME).cpp
+$(NAME): $(OBJ)
+	$(CPPCOMPILER) $(CPPFLAGS) -o $(NAME) $(OBJ)
 
-clean :
-	$(RM) $(NAME)
+%.o: %.cpp
+	$(CPPCOMPILER) $(CPPFLAGS) -c $< -o $@
 
-re : clean all
+fclean :
+	$(RM) $(OBJ) $(NAME)
+
+re : fclean all

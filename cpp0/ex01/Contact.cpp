@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
+/*   By: hbenaddi <hbenaddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:03:46 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/10/06 15:54:03 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2024/10/07 15:05:54 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,5 @@ void Contact::setNickname(std::string nickname)
 }
 void Contact::setPhoneNumber(std::string PhoneNumber)
 {
-    this->phoneNumber = phoneNumber;
+    this->phoneNumber = PhoneNumber;
 }
