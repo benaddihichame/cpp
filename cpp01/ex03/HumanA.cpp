@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 15:25:34 by hbenaddi          #+#    #+#             */
-/*   Updated: 2025/01/17 15:02:22 by hbenaddi         ###   ########.fr       */
+/*   Created: 2025/01/05 17:13:09 by hbenaddi          #+#    #+#             */
+/*   Updated: 2025/01/15 09:15:10 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-int main()
+HumanA::HumanA(std::string name, Weapon &gun) : gun(gun)
 {
-    Zombie *ko;
+	this->name = name;
+	std::cout << "HumanA constructor was called" << std::endl;
+}
 
-    ko = newZombie("Zombiesansbuzz");
-    ko->announce();
-    randomChump("foo");
-    delete ko;
+HumanA::~HumanA()
+{
+	std::cout << "HumanA destructor was called" << std::endl;
+}
+std::string	HumanA::getName()
+{
+	return this->name;
+}
+
+void	HumanA::attack()
+{
+	std::cout << this->name << " attack with " << this->gun.getType() << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 19:44:40 by hbenaddi          #+#    #+#             */
-/*   Updated: 2024/10/17 01:56:13 by hbenaddi         ###   ########.fr       */
+/*   Updated: 2025/01/17 14:59:03 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void randomChump(std::string name)
 {
-    Zombie *human;
-    human = newZombie(name);
-    human->announce();
-    delete human;
+    Zombie human = Zombie(name);
+    human.announce();
 }

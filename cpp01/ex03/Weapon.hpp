@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbenaddi <hbenaddi@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 15:25:34 by hbenaddi          #+#    #+#             */
-/*   Updated: 2025/01/17 15:02:22 by hbenaddi         ###   ########.fr       */
+/*   Created: 2025/01/05 17:13:25 by hbenaddi          #+#    #+#             */
+/*   Updated: 2025/01/15 09:12:32 by hbenaddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int main()
+#include <iostream>
+
+class Weapon
 {
-    Zombie *ko;
+	public:
+		Weapon(std::string type);
+		~Weapon();
+		std::string	getType(void) const;
+		void setType(std::string newType);
+	private :
+		std::string type;
+	
+};
 
-    ko = newZombie("Zombiesansbuzz");
-    ko->announce();
-    randomChump("foo");
-    delete ko;
-}
+#endif
