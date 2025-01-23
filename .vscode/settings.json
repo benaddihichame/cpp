@@ -63,6 +63,8 @@
         "memory": "cpp",
         "type_traits": "cpp",
         "algorithm": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "filesystem": "cpp",
+        "fixed.hpp": "c"
     }
 }
