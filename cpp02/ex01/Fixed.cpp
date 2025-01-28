@@ -8,17 +8,6 @@ Fixed::~Fixed()
 {
 	std::cout << "Destructor was called" << std::endl;
 }
-Fixed::Fixed(const int para)
-{
-	std::cout << "INT Constructor called" << std::endl;
-	this->nb = para << Fixed::bit;
-}
-
-Fixed::Fixed(const float para)
-{
-	std::cout << "FLOAT Constructor called" << std::endl;
-	this->nb = roundf(para * (1 << this->bit)); 
-}
 Fixed::Fixed(const Fixed& other) : nb(other.nb)
 {
 	std::cout << "Copy constructor called" << std::endl;
@@ -29,6 +18,18 @@ Fixed	&Fixed::operator=(const Fixed& other)
 	if (this != &other)
 		this->nb = other.getRawBits();
 	return *this;
+}
+
+Fixed::Fixed(const int para)
+{
+	std::cout << "INT Constructor called" << std::endl;
+	this->nb = para << Fixed::bit;
+}
+
+Fixed::Fixed(const float para)
+{
+	std::cout << "FLOAT Constructor called" << std::endl;
+	this->nb = roundf(para * (1 << this->bit)); 
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
