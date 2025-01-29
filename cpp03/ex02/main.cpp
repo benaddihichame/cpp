@@ -3,14 +3,14 @@
 int main()
 {
     FragTrap frag1("Bob");
-    FragTrap frag2(frag1); // Test du constructeur de copie
+    FragTrap frag2(frag1);
     FragTrap frag3;
-    frag3 = frag1; // Test de l'opérateur d'affectation
+    frag3 = frag1;
 
-    frag1.highFivesGuys(); // Test de la capacité spéciale
-    frag1.attack("Target"); // Test de l'attaque
-    frag1.takeDamage(20); // Test des dégâts
-    frag1.beRepaired(10); // Test de la réparation
+    frag1.highFivesGuys();
+    frag1.attack("Target");
+    frag1.takeDamage(20);
+    frag1.beRepaired(10);
 
     return 0;
 }
