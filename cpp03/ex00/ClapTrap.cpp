@@ -64,7 +64,7 @@ void	ClapTrap::takeDamage( unsigned int amount )
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->EnergiePoints >= 0)
+	if (this->EnergiePoints <= 0)
 	{
 		std::cout << "Claptrap " << this->name << " have no fuel to be repaire\n"; 
 		return ;
