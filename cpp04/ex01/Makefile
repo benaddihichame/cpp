@@ -3,7 +3,7 @@ CPPFLAGS = -Werror -Wextra -Wall -std=c++98
 NAME = ClapTrap
 RM = rm -rf
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC = main.cpp Cat.cpp Dog.cpp Animal.cpp WrongCat.cpp WrongAnimal.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
