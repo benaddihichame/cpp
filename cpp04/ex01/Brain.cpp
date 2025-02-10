@@ -20,10 +20,6 @@ Brain& Brain::operator=(const Brain& cpy)
 	return *this;
 }
 
-Brain::~Brain()
-{
-	std::cout << "Brain Destructor Called\n";
-}
 
 void Brain::AppendIdea(const std::string &idea, unsigned int num)
 {
@@ -41,4 +37,8 @@ void	Brain::ShowIdea()
 			std::cout << i << ": " << this->ideas[i] << std::endl;
 		i++;
 	}
+}
+Brain::~Brain()
+{
+	std::cout << "Brain Destructor Called\n";
 }

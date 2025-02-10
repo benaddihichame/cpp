@@ -16,7 +16,7 @@ Dog::Dog(std::string type) : Animal(type)
 Dog::Dog(const Dog& other) : Animal(other)
 {	
 	std::cout << "Constructor COPY Dog\n";
-	*this = other;
+	this->type = other.type;
 	this->brain = new Brain(*other.brain);
 }
 
@@ -24,7 +24,6 @@ Dog& Dog::operator=(const Dog& cpy)
 {
 	if (&cpy != this)
 	{
-		delete this->brain;
 		this->brain = new Brain(*cpy.brain);
 		this->type = cpy.type;
 	}
@@ -46,6 +45,7 @@ void Dog::printIdea(void)
 {
 	this->brain->ShowIdea();
 }
+
 Dog::~Dog()
 {
 	delete this->brain;

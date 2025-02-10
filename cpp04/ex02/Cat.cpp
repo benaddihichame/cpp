@@ -16,7 +16,7 @@ Cat::Cat(std::string type) : AAnimal(type)
 Cat::Cat(const Cat& other) : AAnimal(other)
 {	
 	std::cout << "Constructor COPY Cat\n";
-	*this = other;
+	this->type = other.type;
 	this->brain = new Brain(*other.brain);
 }
 
@@ -25,7 +25,6 @@ Cat& Cat::operator=(const Cat& cpy)
 	if (&cpy != this)
 	{
 		this->type = cpy.type;
-		delete this->brain;
 		this->brain = new Brain(*cpy.brain);
 	}
 	std::cout << "Operator assignation Cat\n";
@@ -46,6 +45,8 @@ void Cat::printIdea()
 {
 	this->brain->ShowIdea();
 }
+
+
 Cat::~Cat()
 {
 	delete this->brain;
