@@ -1,9 +1,9 @@
 CPPCOMPILER = c++
 CPPFLAGS = -Werror -Wextra -Wall -std=c++98
-NAME = ClapTrap
+NAME = Animal
 RM = rm -rf
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC = main.cpp Cat.cpp Dog.cpp AAnimal.cpp WrongCat.cpp WrongAnimal.cpp Brain.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

@@ -8,7 +8,7 @@ Animal::Animal() : type("")
 Animal::Animal(std::string type)
 {
 	this->type = type;
-	std::cout << "ARGS Constructor for " <<  type << std::endl;
+	std::cout << "ARGS Animal Constructor for " <<  type << std::endl;
 }
 
 Animal::Animal(const Animal& other)
