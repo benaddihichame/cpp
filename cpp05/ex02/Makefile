@@ -3,7 +3,7 @@ CPPFLAGS = -Werror -Wextra -Wall -std=c++98
 NAME = Form
 RM = rm -rf
 
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

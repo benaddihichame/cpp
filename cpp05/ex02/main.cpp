@@ -1,33 +1,72 @@
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include <iostream>
 
-int main()
+int	main(void)
 {
-	try {
-		Bureaucrat boss("Boss", 1);
-		Bureaucrat intern("Intern", 150);
-		Form tax("Tax Form", 100, 50);
-		Form security("Security Clearance", 5, 2);
+	Bureaucrat lowRank("Intern", 140);
+	Bureaucrat midRank("Officer", 70);
+	Bureaucrat highRank("Director", 4);
 
-		std::cout << boss << std::endl;
-		std::cout << intern << std::endl;
-		std::cout << tax << std::endl;
-		std::cout << security << std::endl;
+	std::cout << "--- Bureaucrats Created ---" << std::endl;
+	std::cout << lowRank;
+	std::cout << midRank;
+	std::cout << highRank;
+	std::cout << std::endl;
 
-		boss.signForm(tax);
-		boss.signForm(security);
+	std::cout << "--- Testing ShrubberyCreationForm ---" << std::endl;
+	ShrubberyCreationForm shrubForm("garden");
 
-		intern.signForm(tax);
-		Form invalid1("Invalid", 0, 50);
-	}catch (std::exception &e)
+	std::cout << "Attempt to execute before signing:" << std::endl;
+	try
 	{
-		std::cout <<"Execption: " << e.what() << std::endl;
+		lowRank.executeForm(shrubForm);
 	}
-	try {
-		Form invalid2("INvalid2", 151, 50);
-	}catch (std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cout << "Exception: " << e.what() << std::endl;
 	}
-	return 0;
+
+	std::cout << "Intern attempts to sign (should work):" << std::endl;
+	lowRank.signForm(shrubForm);
+
+	std::cout << "Intern attempts to execute (should work):" << std::endl;
+	lowRank.executeForm(shrubForm);
+	std::cout << std::endl;
+
+	std::cout << "--- Testing RobotomyRequestForm ---" << std::endl;
+	RobotomyRequestForm robotForm("Bender");
+
+	std::cout << "Intern attempts to sign (should fail):" << std::endl;
+	lowRank.signForm(robotForm);
+
+	std::cout << "Officer attempts to sign (should work):" << std::endl;
+	midRank.signForm(robotForm);
+
+	std::cout << "Intern attempts to execute (should fail):" << std::endl;
+	lowRank.executeForm(robotForm);
+
+	std::cout << "Officer attempts to execute (should work):" << std::endl;
+	midRank.executeForm(robotForm);
+	std::cout << std::endl;
+
+	std::cout << "--- Testing PresidentialPardonForm ---" << std::endl;
+	PresidentialPardonForm pardonForm("Arthur Dent");
+
+	std::cout << "Officer attempts to sign (should fail):" << std::endl;
+	midRank.signForm(pardonForm);
+
+	std::cout << "Director attempts to sign (should work):" << std::endl;
+	highRank.signForm(pardonForm);
+
+	std::cout << "Officer attempts to execute (should fail):" << std::endl;
+	midRank.executeForm(pardonForm);
+
+	std::cout << "Director attempts to execute (should work):" << std::endl;
+	highRank.executeForm(pardonForm);
+	std::cout << std::endl;
+
+	return (0);
 }
