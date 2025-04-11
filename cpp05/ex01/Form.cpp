@@ -4,6 +4,11 @@ Form::Form(): name("default"), sign(false), grade_sign(150), grade_exec(150){}
 Form::~Form(){}
 Form::Form(const Form&cpy): name(cpy.name), sign(false), grade_sign(cpy.grade_sign), grade_exec(cpy.grade_exec){}
 
+Form &Form::operator=(const Form&cpy)
+{
+	this->sign = cpy.sign;
+	return *this;
+}
 
 Form::Form(std::string name,int grade_sign, int grad_exec): name(name), sign(false), grade_sign(grade_sign), grade_exec(grad_exec)
 {

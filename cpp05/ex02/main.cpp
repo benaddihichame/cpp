@@ -6,14 +6,14 @@
 
 int	main(void)
 {
-	Bureaucrat lowRank("Intern", 140);
-	Bureaucrat midRank("Officer", 70);
+	Bureaucrat lowRank("Intern", 132);
+	Bureaucrat midRank("Officer", 30);
 	Bureaucrat highRank("Director", 4);
 
 	std::cout << "--- Bureaucrats Created ---" << std::endl;
-	std::cout << lowRank;
-	std::cout << midRank;
-	std::cout << highRank;
+	std::cout << lowRank << std::endl;
+	std::cout << midRank << std::endl;
+	std::cout << highRank << std::endl;
 	std::cout << std::endl;
 
 	std::cout << "--- Testing ShrubberyCreationForm ---" << std::endl;
