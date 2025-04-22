@@ -3,7 +3,7 @@ CPPFLAGS = -Werror -Wextra -Wall -std=c++98
 NAME = template
 RM = rm -rf
 
-SRC = main.cpp
+SRC = main.cpp Span.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
