@@ -1,6 +1,6 @@
 CPPCOMPILER = c++
 CPPFLAGS = -Werror -Wextra -Wall -std=c++98
-NAME = template
+NAME = mutant
 RM = rm -rf
 
 SRC = main.cpp

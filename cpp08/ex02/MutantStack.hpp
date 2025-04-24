@@ -57,25 +57,23 @@ class MutantStack : public std::stack<T>
 			return this->c.rend();
 		};
 		
-		MutantStack()
+		MutantStack(): std::stack<T>()
 		{
 
 		};
 		
-		MutantStack(const MutantStack &cpy)
+		MutantStack(const MutantStack &cpy): std::stack<T>(cpy)
 		{
 			
 		};
 		
 		MutantStack &operator=(const MutantStack &cpy)
 		{
-
+			std::stack<T>::operator=(cpy);	
+			return *this;
 		};
 		
 		~MutantStack()
-		{
-
-		};
-
+		{};
 };
 #endif
