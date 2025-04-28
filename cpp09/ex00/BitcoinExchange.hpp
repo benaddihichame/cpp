@@ -7,22 +7,22 @@
 #include <limits>
 #include <sstream>
 #include <fstream>
+#include <cstdlib>
 
 
 class BitcoinExchange
 {
 	private:
-		std::map<std::string, float> exchangeRate;
+		BitcoinExchange();
+		std::map<std::string, float> mapi;
+		bool isValideDate(const std::string &date)const;
 	public:
-	~BitcoinExchange();
-	BitcoinExchange();
-	BitcoinExchange(const BitcoinExchange &cpy);
-	BitcoinExchange &operator=(const BitcoinExchange &cpy);
-	void loadDatabase(const std::string &filename);
-	void processInputFile(const std::string &filename);
-	bool isValideDate(const std::string &date)const;
-	bool isValideValue(const float value)const;
-	
+		~BitcoinExchange();
+		BitcoinExchange(const std::string &filename);
+		BitcoinExchange(const BitcoinExchange &cpy);
+		BitcoinExchange &operator=(const BitcoinExchange &cpy);
+		std::map<std::string, float> loadDatabase(const std::string &filename)const;
+		void handleInputFile(const std::string &filename) const;	
 };
 
 #endif
