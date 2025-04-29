@@ -1,8 +1,8 @@
 #include "BitcoinExchange.hpp"
 
 
-BitcoinExchange::~BitcoinExchange()
-{}
+BitcoinExchange::~BitcoinExchange(){}
+BitcoinExchange::BitcoinExchange(){}
 BitcoinExchange::BitcoinExchange(const std::string &filename):mapi(loadDatabase(filename))
 {}
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &cpy):mapi(cpy.mapi)
