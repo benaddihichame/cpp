@@ -8,12 +8,16 @@
 class RPN
 {
 	private:
-	std::stack<int> stack;
+		std::stack<int> theValue;
+		bool	isOperator(char c)const;
+		bool	isNumb(char c)const;
 	public:
-	RPN();
-	RPN(const RPN &cpy);
-	RPN &operator=(const RPN &cpy);
-	~RPN();
+		RPN();
+		RPN(const RPN &cpy);
+		RPN &operator=(const RPN &cpy);
+		~RPN();
+		void	doOperation(char op);
+		int	doMath(const std::string &e);
 };
 
 #endif
