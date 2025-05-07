@@ -97,6 +97,6 @@ int	RPN::doMath(const std::string &expression)
     }
 
     if (theValue.size() != 1)
-        throw std::runtime_error("Error: invalid RPN expression (too many operands)");
+        throw std::runtime_error("Error: invalid RPN expression");
     return theValue.top();
 }

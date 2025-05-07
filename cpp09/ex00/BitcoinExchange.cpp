@@ -77,8 +77,10 @@ void	BitcoinExchange::handleInputFile(const std::string &filename) const
 	std::ifstream file(filename.c_str());
 	if (!file.is_open())
 		throw std::runtime_error("Error: coul not open file");
+
 	std::string line;
 	std::getline(file, line);
+	
 	while (std::getline(file, line))
 	{
 		size_t sep = line.find(" | ");
